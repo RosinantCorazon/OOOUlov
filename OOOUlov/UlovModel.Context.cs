@@ -19,7 +19,14 @@ namespace OOOUlov
             : base("name=UlovEntity")
         {
         }
-    
+
+        private static UlovEntity _context;
+        public static UlovEntity GetContext()
+        {
+            if (_context == null)
+                _context = new UlovEntity();
+            return _context;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
