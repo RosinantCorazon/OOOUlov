@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOOUlov.Windows"
         mc:Ignorable="d"
-        Title="UpProd" Height="450" Width="800">
+        Title="ООО Улов - Редактирование товара" Height="450" Width="800" MinHeight="450" MinWidth="800">
     <Grid>
-        
+        <Label Content="Редактирование товара" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <StackPanel Margin="10,40,0,0" >
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Код" FontSize="14"/>
+                <TextBox Name="IDProd" Text="{Binding IDProd}" Width="200" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Наименование" FontSize="14"/>
+                <TextBox Name="NameProd" Text="{Binding Name}" Width="200" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Цена" FontSize="14"/>
+                <TextBox Name="PriceProd" Text="{Binding Price}" Width="200" Height="20"/>
+                <Label Content="точки необходимо заменить на запятые" FontSize="14" Foreground="Gray"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Описание" FontSize="14"/>
+                <TextBox Name="DescProd" Text="{Binding Description}" Width="200" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Скидка" FontSize="14"/>
+                <TextBox  Name="DisProd" Text="{Binding Discount}" Width="200" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Изображение" FontSize="14"/>
+                <TextBox Name="ImageProd" Text="{Binding Image}" Width="200" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Производитель" FontSize="14"/>
+                <ComboBox DisplayMemberPath="Name" Name="ManufactProd" Text="{Binding Manufactures.Name}" Width="200" Height="20"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Name="AddBtn" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Добавить заказ" Margin="30,0,0,20" Width="100" Height="30" Click="AddBtn_Click"/>
     </Grid>
 </Window>

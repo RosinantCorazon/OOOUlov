@@ -19,9 +19,21 @@ namespace OOOUlov.Windows
     /// </summary>
     public partial class UpProd : Window
     {
-        public UpProd()
+        MainWindow mainWindow;
+        Products prod;
+        UlovEntity db;
+        public UpProd(Products editProd, MainWindow mw)
         {
             InitializeComponent();
+            prod = editProd;
+            db = UlovEntity.GetContext();
+            mainWindow = mw;
+            DataContext = prod;
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

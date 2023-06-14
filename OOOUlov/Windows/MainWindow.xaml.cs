@@ -118,7 +118,8 @@ namespace OOOUlov
         /// </summary>
         private void UpBtn_Click(object sender, RoutedEventArgs e)
         {
-            Windows.UpProd busket = new Windows.UpProd();
+            var editProd = ProdDg.SelectedItem as Products;
+            Windows.UpProd busket = new Windows.UpProd(editProd, this);
             busket.Show();
         }
 
